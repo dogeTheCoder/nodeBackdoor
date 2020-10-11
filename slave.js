@@ -14,15 +14,11 @@ var client = new net.Socket();
 
 
 function sleep() {
-    setTimeout(() => {
-        //console.log("hello worl");
-        
-        client.connect(1337, '127.0.0.1', function() {
-            console.log('Connected');
-            client.write('Hello, server! Love, Client.');
-        });
+    client.connect(3000, '159.89.100.64', function() {
+        console.log('Connected');
+        client.write('Hello, server! Love, Client.');
+    });
 
-    }, 1000)
 }
 sleep();
 client.on("error", function(data) {
